@@ -11,4 +11,4 @@ instances = ec2.create_instances(
       MaxCount=1,
       InstanceType='t2.micro',
   )
-  print("AWS EC2 Instance Launched successfully")
+print("AWS EC2 Instance Launched successfully")
