@@ -11,3 +11,6 @@ resource "aws_instance" "demo" {
     Name   = "EC2-Terraform-Instance"
   }
 }
+output "public_ip" {
+    value  = aws_instance.demo.public_ip
+}
