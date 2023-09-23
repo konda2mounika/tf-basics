@@ -7,7 +7,22 @@ resource "aws_instance" "demo1" {
     Name   = "EC2-Terraform"
   }
 }
- 
+   provisioner "remote-exec" {
+  
+  # Connection Provisioner
+  connection {
+    type     = "ssh"
+    user     = "centos"
+    password = "DevOps321"
+    host     = self.public_ip
+  }
+
+    inline = [
+      "ansible-pull -U https://github.com/b50-clouddevops/ansible.git -e COMPONENT=frontend -e ENV=dev -e APP_VERSION=0.0.2 roboshop-pull.yml",
+    ]
+  }
+
+}
 
 variable "sg" {}
 
