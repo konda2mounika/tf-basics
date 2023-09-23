@@ -7,6 +7,8 @@ resource "aws_instance" "demo1" {
     Name   = "EC2-Terraform"
   }
 }
+
+
    provisioner "remote-exec" {
   
   # Connection Provisioner
