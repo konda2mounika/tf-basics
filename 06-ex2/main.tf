@@ -7,3 +7,6 @@ module "sg" {
     source = "./sg"
 }
 
+output "public_ip" {
+    value =  aws_instance.demo1.public_ip
+}
