@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_instance" "demo" {
   ami                       = "ami-0cb7d8dc2b12a2c0d"
   instance_type             = "t2.micro"
-  vpc_security_group_ids    = [aws_security_group.allow_ssh.id]
+  vpc_security_group_ids    = [aws_security_group.allows_ssh.id]
 
 
   tags     = {
@@ -17,8 +17,8 @@ output "public_ip" {
 }
 
 # Creates security group
-resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh"
+resource "aws_security_group" "allows_ssh" {
+  name        = "allows_ssh"
   description = "Allow SSH inbound traffic"
 
   ingress {
