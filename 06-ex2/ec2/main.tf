@@ -6,7 +6,7 @@ resource "aws_instance" "demo1" {
   tags     = {
     Name   = "EC2-Terraform"
   }
-
+}
  
 
 variable "sg" {}
