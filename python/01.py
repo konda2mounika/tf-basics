@@ -7,6 +7,7 @@ ec2 = boto3.resource('ec2')
 # creating a new EC2 instance
 instances = ec2.create_instances(
       ImageId='ami-0cb7d8dc2b12a2c0d',
+      location= 'us-east-1'
       MinCount=1,
       MaxCount=1,
       InstanceType='t2.micro',
